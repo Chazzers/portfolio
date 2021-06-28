@@ -1,12 +1,14 @@
 <template>
 	<main>
-		<p>Hello there traveller of the digital landscape.</p>
-		<p>
-			My name is
-			<span>Chazz Mannering</span>
-			and I’m an aspiring Front-end developer...
-		</p>
-		<p>Welcome to my portfolio website!</p>
+		<div class="js-animate">
+			<p>Hello there traveller of the digital landscape.</p>
+			<p>
+				My name is
+				<span>Chazz Mannering</span>
+				and I’m an aspiring Front-end developer...
+			</p>
+			<p>Welcome to my portfolio website!</p>
+		</div>
 	</main>
 </template>
 
@@ -47,9 +49,11 @@ main p {
 	font-size: 1.5em;
 	margin-bottom: 1em;
 	font-weight: bold;
-	visibility: hidden;
-	opacity: 0;
-	transform: translateX(50%);
+}
+
+.js-animate {
+	max-width: 1080px;
+	margin: auto;
 }
 
 span {

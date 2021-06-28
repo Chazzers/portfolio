@@ -152,6 +152,11 @@ h6 {
 	font-size: 1.20em;
 }
 
+.js-animate {
+	max-width: 1080px;
+	margin: auto;
+}
+
 @media screen and (min-width: 768px) {
 	body {
 		font-size: 20px;

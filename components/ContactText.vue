@@ -1,23 +1,29 @@
 <template>
 	<section>
-		<h2>Contact</h2>
-		<form
-			action="mailto:chazz567@gmail.com"
-			method="POST"
-			enctype="multipart/form-data"
-		>
-			<label for="full-name">Full name</label>
-			<input id="full-name" type="text" placeholder="John Doe" />
-			<label for="e-mail">E-mail</label>
-			<input id="e-mail" type="text" placeholder="john.doe@example.com" />
-			<label for="description">Description</label>
-			<input
-				id="description"
-				type="text"
-				placeholder="Job offer, Project details etc."
-			/>
-			<button type="submit">Submit</button>
-		</form>
+		<div class="js-animate">
+			<h2>Contact</h2>
+			<form
+				action="mailto:chazz567@gmail.com"
+				method="POST"
+				enctype="multipart/form-data"
+			>
+				<label for="full-name">Full name</label>
+				<input id="full-name" type="text" placeholder="John Doe" />
+				<label for="e-mail">E-mail</label>
+				<input
+					id="e-mail"
+					type="text"
+					placeholder="john.doe@example.com"
+				/>
+				<label for="description">Description</label>
+				<input
+					id="description"
+					type="text"
+					placeholder="Job offer, Project details etc."
+				/>
+				<button type="submit">Submit</button>
+			</form>
+		</div>
 	</section>
 </template>
 
@@ -29,6 +35,11 @@ export default {}
 section {
 	background-color: var(--second-color);
 	padding: 1em 1em 2em;
+}
+
+.js-animate {
+	max-width: 1080px;
+	margin: auto;
 }
 
 h2 {

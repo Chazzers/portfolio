@@ -107,6 +107,11 @@ section .js-animate div {
 	padding: 0 1em;
 }
 
+.js-animate {
+	max-width: 1080px;
+	margin: auto;
+}
+
 @media screen and (min-width: 768px) {
 	section {
 		padding: 2em 0;
@@ -118,6 +123,17 @@ section .js-animate div {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		padding: 0 2em;
+	}
+}
+
+@media screen and (min-width: 1160px) {
+	h2 {
+		padding: 0 0;
+	}
+	section .js-animate div {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		padding: 0;
 	}
 }
 </style>
