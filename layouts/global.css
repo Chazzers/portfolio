@@ -1,0 +1,170 @@
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('~assets/fonts/Vollkorn-Regular.woff2') format('woff2'),
+        url('~assets/fonts/Vollkorn-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('~assets/fonts/Vollkorn-ExtraBold.woff2') format('woff2'),
+        url('~assets/fonts/Vollkorn-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('~assets/fonts/Vollkorn-Black.woff2') format('woff2'),
+        url('~assets/fonts/Vollkorn-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('~assets/fonts/Vollkorn-SemiBold.woff2') format('woff2'),
+        url('~assets/fonts/Vollkorn-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('~assets/fonts/Vollkorn-BlackItalic.woff2') format('woff2'),
+        url('~assets/fonts/Vollkorn-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('~assets/fonts/Vollkorn-Medium.woff2') format('woff2'),
+        url('~assets/fonts/Vollkorn-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('~assets/fonts/Vollkorn-Bold.woff2') format('woff2'),
+        url('~assets/fonts/Vollkorn-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('~assets/fonts/Vollkorn-SemiBoldItalic.woff2') format('woff2'),
+        url('~assets/fonts/Vollkorn-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('~assets/fonts/Vollkorn-ExtraBoldItalic.woff2') format('woff2'),
+        url('~assets/fonts/Vollkorn-ExtraBoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('~assets/fonts/Vollkorn-BoldItalic.woff2') format('woff2'),
+        url('~assets/fonts/Vollkorn-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('~assets/fonts/Vollkorn-MediumItalic.woff2') format('woff2'),
+        url('~assets/fonts/Vollkorn-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('~assets/fonts/Vollkorn-Italic.woff2') format('woff2'),
+        url('~assets/fonts/Vollkorn-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+	--main-color: #4D34C9;
+	--second-color: #8D7DDF;
+	--third-color: #120458;
+	--fourth-color: #FFF;
+
+	--placeholder-color: #4D5680;
+
+	--main-font-color: #FFF;
+	--font-highlight-color: #8D7DDF;
+
+	--linear-gradient: linear-gradient(0deg, var(--main-color) 0%, var(--third-color) 100%);
+}
+
+body {
+	font-size: 16px;
+}
+
+p, a, button, input, label {
+	font-size: 1em;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.75em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+h4 {
+	font-size: 1.33em;
+}
+
+h5 {
+	font-size: 1.25em;
+}
+
+h6 {
+	font-size: 1.20em;
+}
+
+@media screen and (min-width: 768px) {
+	body {
+		font-size: 20px;
+	}
+}
+
+* {
+	font-family: 'Vollkorn';
+	line-height: 1.5;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	color: var(--main-font-color);
+}

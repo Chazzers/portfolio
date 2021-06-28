@@ -1,0 +1,23 @@
+{
+  "AboutText": {
+    "description": "Auto imported from components/AboutText.vue"
+  },
+  "BigText": {
+    "description": "Auto imported from components/BigText.vue"
+  },
+  "ContactText": {
+    "description": "Auto imported from components/ContactText.vue"
+  },
+  "IconList": {
+    "description": "Auto imported from components/IconList.vue"
+  },
+  "MyWork": {
+    "description": "Auto imported from components/MyWork.vue"
+  },
+  "MyWorkItem": {
+    "description": "Auto imported from components/MyWorkItem.vue"
+  },
+  "NiceImg": {
+    "description": "Auto imported from components/NiceImg.vue"
+  }
+}
