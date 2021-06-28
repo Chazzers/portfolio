@@ -56,14 +56,15 @@ input {
 	width: 100%;
 	padding: 0.5em;
 	border: none;
+	border-bottom: solid 1px var(--third-color);
 }
 
 button {
 	padding: 1em;
 	font-weight: 600;
 	border: none;
-	background-color: var(--third-color);
-	color: var(--main-font-color);
+	background-color: var(--font-highlight-color);
+	color: var(--main-color);
 }
 
 @media screen and (min-width: 768px) {

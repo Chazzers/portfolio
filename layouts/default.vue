@@ -18,5 +18,6 @@ h1 {
 	padding: 0.5rem;
 	text-align: center;
 	margin: 0;
+	color: var(--fourth-color);
 }
 </style>

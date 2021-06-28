@@ -107,15 +107,15 @@
 }
 
 :root {
-	--main-color: #4D34C9;
-	--second-color: #8D7DDF;
-	--third-color: #120458;
-	--fourth-color: #FFF;
+	--main-color: #fff;
+	--second-color: #fff;
+	--third-color: #000;
+	--fourth-color: #000;
 
-	--placeholder-color: #4D5680;
+	--placeholder-color: #7B7B7B;
 
-	--main-font-color: #FFF;
-	--font-highlight-color: #8D7DDF;
+	--main-font-color: #000;
+	--font-highlight-color: #C80000;
 
 	--linear-gradient: linear-gradient(0deg, var(--main-color) 0%, var(--third-color) 100%);
 }

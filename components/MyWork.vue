@@ -101,6 +101,7 @@ section {
 
 h2 {
 	padding: 0 1em;
+	color: var(--second-color);
 }
 
 section .js-animate div {
