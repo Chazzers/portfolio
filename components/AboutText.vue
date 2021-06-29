@@ -179,12 +179,6 @@ section .img-container svg {
 	height: auto;
 }
 
-section .js-animate > * {
-	visibility: hidden;
-	opacity: 0;
-	transform: translateX(50%);
-}
-
 @media screen and (min-width: 768px) {
 	section {
 		padding: 2em;
