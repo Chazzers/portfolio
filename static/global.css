@@ -1,0 +1,141 @@
+@font-face {
+	font-family: 'Fira Sans';
+	src:
+		url('/fonts/FiraSans-Light.woff2') format('woff2'),
+		url('/fonts/FiraSans-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src:
+		url('/fonts/FiraSans-LightItalic.woff2') format('woff2'),
+		url('/fonts/FiraSans-LightItalic.woff') format('woff');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src:
+		url('/fonts/FiraSans-Italic.woff2') format('woff2'),
+		url('/fonts/FiraSans-Italic.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src:
+		url('/fonts/FiraSans-Medium.woff2') format('woff2'),
+		url('/fonts/FiraSans-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src:
+		url('/fonts/FiraSans-Regular.woff2') format('woff2'),
+		url('/fonts/FiraSans-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src:
+		url('/fonts/FiraSans-MediumItalic.woff2') format('woff2'),
+		url('/fonts/FiraSans-MediumItalic.woff') format('woff');
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+:root {
+	--title-animation: 0.33s;
+	--color-red: #c80000;
+}
+
+h1 {
+	overflow: hidden;
+	position: relative;
+}
+h1::after {
+	position: absolute;
+	content: '';
+	bottom: 0;
+	height: 4px;
+	background-color: var(--color-red);
+	width: 0;
+	left: 0;
+	transition: width 0.33s ease;
+}
+
+h1.in-view::after {
+	width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 500;
+	line-height: 1.5;
+}
+
+p,
+button,
+li,
+a,
+option,
+select,
+input,
+label {
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: normal;
+	font-size: 1em;
+	line-height: 1.5;
+}
+
+h1 > span,
+h2 > span {
+	display: inline-block;
+	transform: translate(-50%, -100%);
+	opacity: 0;
+}
+
+h1.in-view > span {
+	animation-name: animate;
+	animation-duration: var(--title-animation);
+	animation-delay: var(--delay);
+	animation-fill-mode: forwards;
+}
+
+@keyframes animate {
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+body {
+	min-height: 100vh;
+	font-size: 16px;
+	margin: 0;
+}
+
+html {
+	height: 100%;
+}
+a {
+	text-decoration: none;
+}
