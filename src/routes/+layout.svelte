@@ -29,7 +29,8 @@
 </script>
 
 <nav>
-	<p>Chazz' portfolio</p>
+	<p><a href="/">Chazz' portfolio</a></p>
+	<p><a href="/projects">Projects</a></p>
 </nav>
 
 <div class="wrapper">
@@ -49,11 +50,17 @@
 	}
 	nav > p {
 		margin: 0;
-		font-size: 1em;
+	}
+
+	nav > p > a {
+		color: black;
+	}
+
+	nav {
 		display: flex;
-		justify-content: center;
-		padding: 1rem;
+		justify-content: space-between;
 		border-bottom: 2px solid var(--color-red);
+		padding: 1rem;
 	}
 
 	@media screen and (min-width: 768px) {

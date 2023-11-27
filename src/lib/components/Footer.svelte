@@ -1,5 +1,13 @@
+<script lang="ts">
+	import InViewObserver from './InViewObserver.svelte';
+</script>
+
 <footer>
-	<p>E-mail: <a href="mailto:chazz567@gmail.com">chazz567@gmail.com</a></p>
+	<InViewObserver let:inView>
+		{#if inView}
+			<p>E-mail: <a href="mailto:chazz567@gmail.com">chazz567@gmail.com</a></p>
+		{/if}
+	</InViewObserver>
 </footer>
 
 <style>

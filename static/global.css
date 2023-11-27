@@ -61,6 +61,15 @@
 :root {
 	--title-animation: 0.33s;
 	--color-red: #c80000;
+
+	--theme-color: #041235;
+	--text-color: #fff;
+	--blue-color: #179eff;
+	--color-environment: #bcda7e;
+	--color-social: #6257e2;
+	--color-social-opacity: #6257e260;
+	--color-governance: #2ac28b;
+	--bg-color-light: #f2f0ed;
 }
 
 h1 {
@@ -82,6 +91,10 @@ h1.in-view::after {
 	width: 100%;
 }
 
+* {
+	font-family: 'Fira Sans', sans-serif;
+	box-sizing: border-box;
+}
 h1,
 h2,
 h3,
@@ -91,11 +104,14 @@ h6 {
 	font-family: 'Fira Sans', sans-serif;
 	font-weight: 500;
 	line-height: 1.5;
+	margin-bottom: 0.25em;
 }
 
 p,
 button,
 li,
+ul,
+ol,
 a,
 option,
 select,
@@ -105,6 +121,7 @@ label {
 	font-weight: normal;
 	font-size: 1em;
 	line-height: 1.5;
+	margin-bottom: 0.25em;
 }
 
 h1 > span,
@@ -115,6 +132,13 @@ h2 > span {
 }
 
 h1.in-view > span {
+	animation-name: animate;
+	animation-duration: var(--title-animation);
+	animation-delay: var(--delay);
+	animation-fill-mode: forwards;
+}
+
+h2.in-view > span {
 	animation-name: animate;
 	animation-duration: var(--title-animation);
 	animation-delay: var(--delay);
@@ -133,7 +157,29 @@ body {
 	margin: 0;
 }
 
-html {
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+h4 {
+	font-size: 1.25em;
+}
+@media screen and (min-width: 768px) {
+	body {
+		font-size: 20px;
+	}
+}
+
+html,
+body {
 	height: 100%;
 }
 a {

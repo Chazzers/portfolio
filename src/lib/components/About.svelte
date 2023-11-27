@@ -1,28 +1,8 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import getAge from '../../helpers/getAge';
-	let inViewElement: HTMLHeadingElement;
-	let inView = false;
+	import InViewObserver from './InViewObserver.svelte';
 
 	const age = getAge('1996-11-08');
-
-	onMount(() => {
-		let options = {
-			root: null,
-			rootMargin: '0px',
-			threshold: 1.0
-		};
-		let callback = (entries, observer) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					inView = true;
-				}
-			});
-		};
-		let observer = new IntersectionObserver(callback, options);
-
-		observer.observe(inViewElement);
-	});
 	const oneYearAgo = (dateString) => {
 		// Parse the input date string
 		const inputDate = new Date(dateString);
@@ -42,26 +22,28 @@
 </script>
 
 <section>
-	<h1 class={inView ? 'in-view' : ''} bind:this={inViewElement}>About Me.</h1>
-	<p class={inView ? 'in-view' : ''}>
-		I'm {age} years old and live in Hoofddorp. In my free-time I like to game, drum and hang out
-		with friends.
-	</p>
-	<p class={inView ? 'in-view' : ''}>
-		I {isRecent ? 'recently' : ''} graduated from Hogeschool van Amsterdam with a bachelor's degree
-		in Communication and Muiltimedia Design, specializing in Front-End development.
-	</p>
-	<p class={inView ? 'in-view' : ''}>
-		During my study I worked half a year full-time and half a year part-time as a front-end
-		developer at Skybox design agency.
-	</p>
-	<p class={inView ? 'in-view' : ''}>
-		In my final year of studying, I did an internship at CLEVERºFRANKE, which is a data design
-		and technology consultancy. There I learned to use React, Svelte and D3.
-	</p>
-	<p class={inView ? 'in-view' : ''}>
-		Now I'm looking to further develop myself in the field of Front-End development.
-	</p>
+	<InViewObserver let:inView>
+		<h1 class={inView ? 'in-view' : ''}>About Me</h1>
+		<p class={inView ? 'in-view' : ''}>
+			I'm {age} years old and live in Hoofddorp. In my free-time I like to game, drum and hang out with
+			friends.
+		</p>
+		<p class={inView ? 'in-view' : ''}>
+			I {isRecent ? 'recently' : ''} graduated from Hogeschool van Amsterdam with a bachelor's degree
+			in Communication and Muiltimedia Design, specializing in Front-End development.
+		</p>
+		<p class={inView ? 'in-view' : ''}>
+			During my study I worked half a year full-time and half a year part-time as a front-end
+			developer at Skybox design agency.
+		</p>
+		<p class={inView ? 'in-view' : ''}>
+			In my final year of studying, I did an internship at CLEVERºFRANKE, which is a data design and
+			technology consultancy. There I learned to use React, Svelte and D3.
+		</p>
+		<p class={inView ? 'in-view' : ''}>
+			Now I'm looking to further develop myself in the field of Front-End development.
+		</p>
+	</InViewObserver>
 </section>
 
 <style>

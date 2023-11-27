@@ -1,8 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import IconList from './IconList.svelte';
-	let inViewElement: HTMLHeadingElement;
-	let inView = false;
+	import InViewObserver from './InViewObserver.svelte';
 	const projects = [
 		{
 			title: 'Danceable',
@@ -37,6 +35,7 @@
 			description: 'Visualising ESG reports with Sveltekit.',
 			prototypeLink: 'https://esg-reporting-gamma.vercel.app/intro',
 			githubLink: 'https://github.com/Chazzers/esg-reporting',
+			// readMoreLink: '/projects/esg-reporting',
 			iconList: {
 				html: true,
 				css: true,
@@ -45,75 +44,67 @@
 				sockets: false,
 				svelte: true
 			}
+		},
+		{
+			title: 'Color picker',
+			description: 'Extract image pixel color on hover of an image.',
+			prototypeLink: 'chazzers.github.io/img-color-picker/',
+			githubLink: 'https://github.com/Chazzers/img-color-picker',
+			readMoreLink: '/projects/color-picker',
+			iconList: {
+				html: true,
+				css: true,
+				js: true,
+				node: false,
+				sockets: false,
+				svelte: false
+			}
 		}
 	];
-
-	onMount(() => {
-		let options = {
-			root: null,
-			rootMargin: '0px',
-			threshold: 0.75
-		};
-		const projectArticles = document.querySelectorAll('.projects');
-		let callback = (entries, observer) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					if (entry.target === inViewElement) {
-						inView = true;
-					}
-					projectArticles.forEach((article) => {
-						if (entry.target === article) {
-							article.classList.add('in-view-article');
-						}
-					});
-				}
-			});
-		};
-		let observer = new IntersectionObserver(callback, options);
-
-		observer.observe(inViewElement);
-
-		projectArticles.forEach((article) => {
-			observer.observe(article);
-		});
-	});
 </script>
 
 <section>
-	<h1 bind:this={inViewElement} class={inView ? 'in-view' : ''}>Projects</h1>
+	<InViewObserver classString={''} let:inView>
+		<h1 class={inView ? 'in-view' : ''}>Projects</h1>
+	</InViewObserver>
 	<div>
-		{#each projects as project}
-			<article class="projects">
-				<header>
-					<h2>
-						{project.title}
-					</h2>
-				</header>
-				<main>
-					<p>
-						{project.description}
-					</p>
-					<div class="links">
-						<a href={project.githubLink}><p>Github</p></a>
-						<a href={project.prototypeLink}><p>Prototype</p></a>
-					</div>
-				</main>
-				<IconList
-					html={project.iconList.html}
-					css={project.iconList.css}
-					js={project.iconList.js}
-					svelte={project.iconList.svelte}
-					sockets={project.iconList.sockets}
-					node={project.iconList.node}
-				/>
-			</article>
+		{#each projects as { title, description, githubLink, prototypeLink, iconList, readMoreLink }}
+			<InViewObserver classString={''} let:inView>
+				<article class={inView ? 'in-view-article' : ''}>
+					<header>
+						<h2>
+							{title}
+						</h2>
+					</header>
+					<main>
+						<p>
+							{description}
+						</p>
+						<div class="links">
+							<a href={githubLink}><p>Github</p></a>
+							<a href={prototypeLink}><p>Prototype</p></a>
+							{#if readMoreLink}
+								<a href={readMoreLink}><p>Read More</p></a>
+							{/if}
+						</div>
+					</main>
+					<IconList
+						html={iconList.html}
+						css={iconList.css}
+						js={iconList.js}
+						svelte={iconList.svelte}
+						sockets={iconList.sockets}
+						node={iconList.node}
+					/>
+				</article>
+			</InViewObserver>
 		{/each}
 	</div>
 </section>
 
 <style>
 	section {
-		min-height: 90vh;
+		min-height: calc(90vh - 6rem);
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
@@ -129,6 +120,7 @@
 	p {
 		opacity: 0;
 		transition: opacity 1s ease 0.66s;
+		margin: 1em 0;
 	}
 
 	section article {

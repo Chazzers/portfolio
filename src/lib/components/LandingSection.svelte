@@ -116,11 +116,11 @@
 		</svg>
 	</div>
 	<div>
-		<h1 bind:this={inViewElement} class={inView ? 'in-view' : ''}>Hi, I'm Chazz.</h1>
+		<h1 bind:this={inViewElement} class={inView ? 'in-view' : ''}>Hi, I'm Chazz</h1>
 		<p class={inView ? 'in-view' : ''}>
-			A Front-End Developer with entry-level experience in React.js, Svelte.js, Vue.js, D3.js,
-			HTML, CSS and more. Adept at realising concepts and transforming designs into
-			web-prototypes and products.
+			A Front-End Developer with entry-level experience in React.js, Svelte.js, Vue.js, D3.js, HTML,
+			CSS and more. Adept at realising concepts and transforming designs into web-prototypes and
+			products.
 		</p>
 	</div>
 </section>
