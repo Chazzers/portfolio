@@ -7,7 +7,7 @@
 		let options = {
 			root: null,
 			rootMargin: '0px',
-			threshold: 0.75
+			threshold: 0.5
 		};
 		const callback = (entries, observer) => {
 			entries.forEach((entry) => {

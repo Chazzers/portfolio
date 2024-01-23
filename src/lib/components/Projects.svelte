@@ -173,6 +173,7 @@
 	h2 {
 		overflow: hidden;
 		position: relative;
+		margin: 0;
 	}
 	h2::after {
 		position: absolute;
@@ -199,6 +200,7 @@
 		display: flex;
 		justify-content: space-around;
 		flex-direction: row;
+		flex-wrap: wrap;
 	}
 	.links a {
 		display: block;
