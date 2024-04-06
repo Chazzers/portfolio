@@ -48,7 +48,7 @@
 		{
 			title: 'Color picker',
 			description: 'Extract image pixel color on hover of an image.',
-			prototypeLink: 'chazzers.github.io/img-color-picker/',
+			prototypeLink: 'https://chazzers.github.io/img-color-picker/',
 			githubLink: 'https://github.com/Chazzers/img-color-picker',
 			readMoreLink: '/projects/color-picker',
 			iconList: {
