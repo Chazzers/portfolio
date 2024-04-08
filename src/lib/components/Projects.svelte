@@ -201,8 +201,11 @@
 		justify-content: space-around;
 		flex-direction: row;
 		flex-wrap: wrap;
+        gap: 1rem;
 	}
 	.links a {
+        flex: 1 1 calc(50% - 1rem);
+        text-align: center;
 		display: block;
 		color: black;
 		text-decoration: none;

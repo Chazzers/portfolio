@@ -207,20 +207,23 @@
 		display: flex;
 		flex-wrap: wrap;
 		padding: 0;
-		justify-content: space-around;
+		justify-content: center;
+        gap: 1rem;
 	}
+
 	ul li {
 		list-style: none;
 		width: 48px;
 		height: 48px;
-		margin: 0.5rem;
 	}
+
 	@media screen and (min-width: 768px) {
 		ul li {
 			width: 64px;
 			height: 64px;
 		}
 	}
+
 	ul li svg {
 		width: 100%;
 		height: 100%;

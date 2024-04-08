@@ -1,8 +1,8 @@
-<script lang="ts">
+<script>
 	export let companyData;
 	export let year;
 	export let content;
-	export let radialGradientString: string;
+	export let radialGradientString;
 	import roundToDecimal from '../../../helpers/roundToDecimal';
 </script>
 
