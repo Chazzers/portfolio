@@ -41,7 +41,7 @@ export const load = async ({ fetch, cookies, url }) => {
 
 		cookies.set('refresh_token', refreshToken, cookieConfig);
 
-		throw redirect(303, `${ROUTE.BASE}/playlists`);
+		throw redirect(303, `/${ROUTE.BASE}/playlists`);
 	}
 };
 
