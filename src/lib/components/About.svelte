@@ -3,7 +3,7 @@
 	import InViewObserver from './InViewObserver.svelte';
 
 	const age = getAge('1996-11-08');
-	const oneYearAgo = (dateString) => {
+	const oneYearAgo = (dateString: string) => {
 		// Parse the input date string
 		const inputDate = new Date(dateString);
 
@@ -22,7 +22,8 @@
 </script>
 
 <section>
-	<InViewObserver let:inView>
+	<InViewObserver let:inView
+		>z
 		<div class="about-container">
 			<h1 class={inView ? 'in-view' : ''}>About Me</h1>
 			<p class={inView ? 'in-view' : ''}>

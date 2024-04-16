@@ -2,12 +2,12 @@
 	import { onMount } from 'svelte';
 	let inViewElement: HTMLHeadingElement;
 	let inView: boolean = false;
-	export let classString: string;
+	export let classString: string | null = null;
 	onMount(() => {
 		let options = {
 			root: null,
 			rootMargin: '0px',
-			threshold: 0.5
+			threshold: 0.5,
 		};
 		const callback = (entries, observer) => {
 			entries.forEach((entry) => {
