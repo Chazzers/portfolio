@@ -6,19 +6,21 @@
 			title: 'Danceable',
 			description: 'How danceable is your Spotify playlist?',
 			githubLink: 'https://github.com/Chazzers/danceable-2.0',
-			prototypeLink: 'https://danceable.onrender.com',
+			prototypeLink: '/projects/danceable',
 			iconList: {
 				html: true,
 				css: true,
 				js: true,
 				node: true,
 				sockets: false,
-				svelte: false
-			}
+				svelte: false,
+			},
 		},
 		{
 			title: 'Beats by friends',
-			description: 'Make simple beats with piano and drums in realtime with others!',
+			description:
+				'Make simple beats with piano and drums in realtime with others!',
+			disclaimer: '*Prototype loadtime is quite long',
 			githubLink: 'https://github.com/Chazzers/beats-by-friends',
 			prototypeLink: 'https://beats-by-friends.onrender.com/',
 			iconList: {
@@ -27,8 +29,8 @@
 				js: true,
 				node: true,
 				sockets: true,
-				svelte: false
-			}
+				svelte: false,
+			},
 		},
 		{
 			title: 'ESG reporting (thesis)',
@@ -42,8 +44,8 @@
 				js: true,
 				node: false,
 				sockets: false,
-				svelte: true
-			}
+				svelte: true,
+			},
 		},
 		{
 			title: 'Color picker',
@@ -57,9 +59,9 @@
 				js: true,
 				node: false,
 				sockets: false,
-				svelte: false
-			}
-		}
+				svelte: false,
+			},
+		},
 	];
 </script>
 
@@ -68,7 +70,7 @@
 		<h1 class={inView ? 'in-view' : ''}>Projects</h1>
 	</InViewObserver>
 	<div>
-		{#each projects as { title, description, githubLink, prototypeLink, iconList, readMoreLink }}
+		{#each projects as { title, description, githubLink, prototypeLink, iconList, readMoreLink, disclaimer }}
 			<InViewObserver classString={''} let:inView>
 				<article class={inView ? 'in-view-article' : ''}>
 					<header>
@@ -80,6 +82,9 @@
 						<p>
 							{description}
 						</p>
+						{#if disclaimer}
+							<p class="disclaimer">{disclaimer}</p>
+						{/if}
 						<div class="links">
 							<a href={githubLink}><p>Github</p></a>
 							<a href={prototypeLink}><p>Prototype</p></a>
@@ -153,10 +158,10 @@
 		section div {
 			flex-direction: row;
 			flex-wrap: wrap;
+			gap: 1rem;
 		}
 		section article {
 			width: 25rem;
-			margin: 1rem;
 		}
 	}
 
@@ -201,11 +206,11 @@
 		justify-content: space-around;
 		flex-direction: row;
 		flex-wrap: wrap;
-        gap: 1rem;
+		gap: 1rem;
 	}
 	.links a {
-        flex: 1 1 calc(50% - 1rem);
-        text-align: center;
+		flex: 1 1 calc(50% - 1rem);
+		text-align: center;
 		display: block;
 		color: black;
 		text-decoration: none;
@@ -240,5 +245,10 @@
 		position: relative;
 		z-index: 1;
 		margin: 0;
+	}
+
+	p.disclaimer {
+		color: #4f4f4f;
+		font-size: 20px;
 	}
 </style>

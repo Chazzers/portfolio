@@ -3,9 +3,13 @@
 </script>
 
 <footer>
-	<InViewObserver let:inView>
+	<InViewObserver classString="" let:inView>
 		{#if inView}
-			<p>E-mail: <a href="mailto:chazz567@gmail.com">chazz567@gmail.com</a></p>
+			<p>
+				E-mail: <a href="mailto:chazz567@gmail.com"
+					>chazz567@gmail.com</a
+				>
+			</p>
 		{/if}
 	</InViewObserver>
 </footer>
@@ -14,6 +18,7 @@
 	footer {
 		background-color: var(--color-red);
 		padding: 1em;
+		justify-self: flex-end;
 	}
 	p,
 	a {

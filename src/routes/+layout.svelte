@@ -9,7 +9,9 @@
 			const words = content?.split(' ');
 			const newHTML: string[] = [];
 			words?.forEach((word, index) => {
-				const spanString = `<span style="--delay: ${index * 0.1}s">${word}</span>`;
+				const spanString = `<span style="--delay: ${
+					index * 0.1
+				}s">${word}</span>`;
 				newHTML.push(spanString);
 			});
 			title.innerHTML = newHTML.join(' ');
@@ -20,7 +22,9 @@
 			const words = content?.split(' ');
 			const newHTML: string[] = [];
 			words?.forEach((word, index) => {
-				const spanString = `<span style="--delay: ${index * 0.1}s">${word}</span>`;
+				const spanString = `<span style="--delay: ${
+					index * 0.1
+				}s">${word}</span>`;
 				newHTML.push(spanString);
 			});
 			title.innerHTML = newHTML.join(' ');
@@ -28,21 +32,45 @@
 	});
 </script>
 
-<nav>
-	<p><a href="/">Chazz' portfolio</a></p>
-	<p><a href="/projects">Projects</a></p>
-</nav>
-
-<div class="wrapper">
-	<slot />
+<div class="root">
+	<div class="root-inner">
+		<nav>
+			<p><a href="/">Chazz' portfolio</a></p>
+			<p><a href="/projects">Projects</a></p>
+		</nav>
+		<div class="wrapper">
+			<slot />
+		</div>
+	</div>
+	<Footer></Footer>
 </div>
-<Footer></Footer>
 
 <style>
+	.root {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		justify-content: space-between;
+	}
+
+	.root-inner {
+		flex: 1 1 100%;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
 	.wrapper {
 		padding: 1em;
 		overflow: hidden;
+		flex: 1 1 100%;
 	}
+
+	.wrapper:has(.prototype) {
+		padding: 0;
+		display: flex;
+	}
+
 	@media screen and (min-width: 768px) {
 		.wrapper {
 			padding: 2em;

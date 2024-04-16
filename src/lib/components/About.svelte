@@ -23,26 +23,31 @@
 
 <section>
 	<InViewObserver let:inView>
-		<h1 class={inView ? 'in-view' : ''}>About Me</h1>
-		<p class={inView ? 'in-view' : ''}>
-			I'm {age} years old and live in Hoofddorp. In my free-time I like to game, drum and hang out with
-			friends.
-		</p>
-		<p class={inView ? 'in-view' : ''}>
-			I {isRecent ? 'recently' : ''} graduated from Hogeschool van Amsterdam with a bachelor's degree
-			in Communication and Muiltimedia Design, specializing in Front-End development.
-		</p>
-		<p class={inView ? 'in-view' : ''}>
-			During my study I worked half a year full-time and half a year part-time as a front-end
-			developer at Skybox design agency.
-		</p>
-		<p class={inView ? 'in-view' : ''}>
-			In my final year of studying, I did an internship at CLEVERºFRANKE, which is a data design and
-			technology consultancy. There I learned to use React, Svelte and D3.
-		</p>
-		<p class={inView ? 'in-view' : ''}>
-			Now I'm looking to further develop myself in the field of Front-End development.
-		</p>
+		<div class="about-container">
+			<h1 class={inView ? 'in-view' : ''}>About Me</h1>
+			<p class={inView ? 'in-view' : ''}>
+				I'm {age} years old and live in Hoofddorp. In my free-time I like
+				to game, drum and hang out with friends.
+			</p>
+			<p class={inView ? 'in-view' : ''}>
+				I {isRecent ? 'recently' : ''} graduated from Hogeschool van Amsterdam
+				with a bachelor's degree in Communication and Muiltimedia Design,
+				specializing in Front-End development.
+			</p>
+			<p class={inView ? 'in-view' : ''}>
+				During my study I worked half a year full-time and half a year
+				part-time as a front-end developer at Skybox design agency.
+			</p>
+			<p class={inView ? 'in-view' : ''}>
+				In my final year of studying, I did an internship at
+				CLEVERºFRANKE, which is a data design and technology
+				consultancy. There I learned to use React, Svelte and D3.
+			</p>
+			<p class={inView ? 'in-view' : ''}>
+				Now I'm looking to further develop myself in the field of
+				Front-End development.
+			</p>
+		</div>
 	</InViewObserver>
 </section>
 
@@ -53,6 +58,13 @@
 		justify-content: flex-start;
 		align-items: flex-start;
 	}
+
+	section .about-container {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
 	section h1 {
 		font-size: 2em;
 	}

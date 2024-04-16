@@ -72,23 +72,20 @@
 	--bg-color-light: #f2f0ed;
 }
 
-h1 {
+h1,
+h2 {
 	overflow: hidden;
 	position: relative;
-}
-h1::after {
-	position: absolute;
-	content: '';
-	bottom: 0;
-	height: 4px;
-	background-color: var(--color-red);
-	width: 0;
-	left: 0;
-	transition: width 0.33s ease;
+	background-image: linear-gradient(var(--color-red), var(--color-red));
+	background-size: 0% 4px;
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	transition: background-size 0.33s ease;
 }
 
-h1.in-view::after {
-	width: 100%;
+h1.in-view,
+h2.in-view {
+	background-size: 100% 4px;
 }
 
 * {
@@ -182,6 +179,11 @@ html,
 body {
 	height: 100%;
 }
+
+body {
+	min-height: 100vh;
+}
+
 a {
 	text-decoration: none;
 }
