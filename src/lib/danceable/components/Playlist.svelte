@@ -1,12 +1,15 @@
 <script lang="ts">
-	import type { PlaylistType } from './types/playlist';
-	import { ROUTE } from './types/route';
+	import type { PlaylistType } from '../types/playlist';
+	import { ROUTE } from '../types/route';
 	import { page } from '$app/stores';
-
-	console.log($page);
+	import { playlistData } from '../store/store';
 
 	export let playlist: PlaylistType;
 	const backupImgUrl = '/projects-assets/danceable/images/music-icon.png';
+
+	function setPlaylist() {
+		playlistData.set(playlist);
+	}
 </script>
 
 {#if $page.params.id}
@@ -22,7 +25,11 @@
 		</article>
 	</div>
 {:else}
-	<a href="/{ROUTE.BASE}/{ROUTE.PLAYLISTS}/{playlist.id}" class="playlist">
+	<a
+		href="/{ROUTE.BASE}/{ROUTE.PLAYLISTS}/{playlist.id}/{ROUTE.SCORE}"
+		class="playlist"
+		on:click={setPlaylist}
+	>
 		<article>
 			<h3><mark>{playlist.name}</mark></h3>
 			<img

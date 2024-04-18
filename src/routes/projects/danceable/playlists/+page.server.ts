@@ -1,7 +1,7 @@
 import { redirect } from '@sveltejs/kit';
 import { Buffer } from 'buffer';
 import { CLIENT_ID, CLIENT_SECRET } from '$env/static/private';
-import { ROUTE } from '$lib/components/danceable/types/route';
+import { ROUTE } from '$lib/danceable/types/route';
 import type { PageServerLoad } from './$types';
 
 export const load = (async ({ fetch, cookies }) => {

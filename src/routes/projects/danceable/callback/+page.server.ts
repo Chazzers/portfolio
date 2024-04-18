@@ -1,7 +1,7 @@
 import { CLIENT_ID, CLIENT_SECRET, REDIRECT_URI } from '$env/static/private';
 import { redirect } from '@sveltejs/kit';
 import { Buffer } from 'buffer';
-import { ROUTE } from '$lib/components/danceable/types/route';
+import { ROUTE } from '$lib/danceable/types/route';
 
 export const load = async ({ fetch, cookies, url }) => {
 	const code = url.searchParams.get('code') || null;

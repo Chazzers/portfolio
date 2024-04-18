@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ROUTE } from '$lib/components/danceable/types/route.js';
+	import { ROUTE } from '$lib/danceable/types/route.js';
 </script>
 
 <main>

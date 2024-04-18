@@ -1,7 +1,6 @@
 <script lang="ts">
-	import Playlist from '$lib/components/danceable/Playlist.svelte';
-	import { ROUTE } from '$lib/components/danceable/types/route';
-	import type { PlaylistType } from '$lib/components/danceable/types/playlist';
+	import Playlist from '$lib/danceable/components/Playlist.svelte';
+	import type { PlaylistType } from '$lib/danceable/types/playlist';
 
 	export let data: {
 		playlists: PlaylistType[];
