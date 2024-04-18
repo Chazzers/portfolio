@@ -23,12 +23,16 @@
 					</div>
 				</div>
 			{:then dataLoaded}
-				<div class="score-container-content">
-					<h2>The danceability of your playlist is:</h2>
-					<div class="score">
-						<h1>{dataLoaded.score}<span>/100</span></h1>
+				{#if dataLoaded}
+					<div class="score-container-content">
+						<h2>The danceability of your playlist is:</h2>
+						<div class="score">
+							<h1>{dataLoaded.score}<span>/100</span></h1>
+						</div>
 					</div>
-				</div>
+				{:else}
+					<p>Your playlist could not be measured</p>
+				{/if}
 			{:catch error}
 				<p>{error.message}</p>
 			{/await}
