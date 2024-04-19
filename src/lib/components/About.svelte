@@ -22,8 +22,7 @@
 </script>
 
 <section>
-	<InViewObserver let:inView
-		>z
+	<InViewObserver let:inView>
 		<div class="about-container">
 			<h1 class={inView ? 'in-view' : ''}>About Me</h1>
 			<p class={inView ? 'in-view' : ''}>
