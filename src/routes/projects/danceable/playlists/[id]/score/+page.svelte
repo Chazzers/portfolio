@@ -7,38 +7,34 @@
 	import { onMount } from 'svelte';
 	export let data;
 
-	let trackData = null;
+	let trackData: any;
 	let score = 0;
 
 	// Update the circle's stroke-dasharray based on the target value
 	function updateCircle(progress: number) {
 		const size = 120;
-		const halfSize = size / 2;
 		const strokeWidth = 8;
 		const radius = (size - strokeWidth) / 2;
 		const circumference = radius * Math.PI * 2;
 		const dash = (progress * circumference) / 100;
 		const circle = document.getElementById('progressCircle');
 		if (circle) {
-			circle.setAttribute('cy', `${halfSize}`);
-			circle.setAttribute('cx', `${halfSize}`);
-			circle.setAttribute('r', `${radius}`);
-			circle.setAttribute('stroke-width', `${strokeWidth}px`);
-			circle.style.transformOrigin = `${halfSize} ${halfSize}`;
-			circle.style.strokeDasharray = `${dash} ${circumference - dash}`;
+			setTimeout(() => {
+				circle.style.strokeDasharray = `${dash} ${circumference - dash}`;
+			}, 10);
 		}
 	}
 	onMount(async () => {
 		trackData = await data.trackData;
 		if (trackData) {
 			const target = trackData.score;
-			const speed = 100;
-			const increment = target / speed;
-			const t0 = performance.now();
 
+			const speed = 100;
+
+			const increment = target / speed;
+			setTimeout(() => updateCircle(target), 1);
 			const interval = setInterval(() => {
 				score += increment;
-				updateCircle(score);
 				if (score >= target) {
 					clearInterval(interval);
 					score = target;
@@ -109,11 +105,23 @@
 	}
 
 	.progress-circle {
+		--size: 120px;
+		--half-size: calc(var(--size) / 2);
+		--stroke-width: 8px;
+		--radius: calc((var(--size) - var(--stroke-width)) / 2);
+		--circumference: calc(var(--radius) * pi * 2);
+		--dash: 0;
 		fill: none;
 		stroke: var(--color-red); /* Change this to your desired color */
 		stroke-linecap: round;
 		transform: rotate(-90deg);
 		transform-origin: center center;
+		stroke-width: var(--stroke-width);
+		r: var(--radius);
+		cx: var(--half-size);
+		cy: var(--half-size);
+		stroke-dasharray: 0 var(--circumference);
+		transition: stroke-dasharray ease-out 0.5s;
 	}
 	.score svg {
 		position: absolute;
